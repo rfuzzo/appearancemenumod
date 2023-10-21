@@ -2602,7 +2602,7 @@ local function getFilesRecursively(_dir, tbl)
   local files = dir(_dir)
   if #files == 0 then return tbl end
   for _, file in ipairs(files) do
-  	local filename = extractFileName(filename)
+  	local filename = extractFileName(file.name)
     -- if it's a directory: call recursive
     if file.type == typeDirectory then 
       getFilesRecursively(_dir .. '/' .. filename, tbl)
